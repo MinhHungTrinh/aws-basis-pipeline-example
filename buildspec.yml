@@ -23,13 +23,18 @@ phases:
       - echo "Create Deploy env file"
       - rm -f .env
       - echo '#!/bin/bash' >> .env
-      - echo "export ENVIRONMENT=$ENVIRONMENT" >> .env
       - echo "export IMAGE_NAME=$REPOSITORY_URI" >> .env
       - echo "export IMAGE_TAG=$IMAGE_TAG" >> .env
       - chmod +x .env
       - cat .env
+      - echo '#!/bin/bash' >> env
+      - echo "export IMAGE_NAME=$REPOSITORY_URI" >> env
+      - echo "export IMAGE_TAG=$IMAGE_TAG" >> env
+      - chmod +x env
+      - cat env
 
 artifacts:
   files:
     - appspec.yml
     - .env
+    - env
