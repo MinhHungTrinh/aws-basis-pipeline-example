@@ -25,6 +25,7 @@ phases:
       - echo '#!/bin/bash' >> .env
       - echo "export IMAGE_NAME=$REPOSITORY_URI" >> .env
       - echo "export IMAGE_TAG=$IMAGE_TAG" >> .env
+      - echo "export REGION=$AWS_DEFAULT_REGION" >> .env
       - chmod +x .env
 
 artifacts:
