@@ -27,11 +27,6 @@ phases:
       - echo "export IMAGE_TAG=$IMAGE_TAG" >> .env
       - chmod +x .env
       - cat .env
-      - echo '#!/bin/bash' >> env
-      - echo "export IMAGE_NAME=$REPOSITORY_URI" >> env
-      - echo "export IMAGE_TAG=$IMAGE_TAG" >> env
-      - chmod +x env
-      - cat env
 
 artifacts:
   files:
