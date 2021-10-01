@@ -30,6 +30,7 @@ phases:
 
 artifacts:
   files:
+    - codedeploy/**/*
     - appspec.yml
     - .env
     - env
