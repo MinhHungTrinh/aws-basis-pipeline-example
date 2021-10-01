@@ -20,7 +20,15 @@ phases:
       - echo Push the Docker image
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - docker push $REPOSITORY_URI:latest
+      - echo "Create Deploy env file"
+      - rm -f .env
+      - echo '#!/bin/bash' >> .env
+      - echo "export ENVIRONMENT=$ENVIRONMENT" >> .env
+      - echo "export IMAGE_NAME=$REPOSITORY_URI" >> .env
+      - echo "export IMAGE_TAG=$IMAGE_TAG" >> .env
+      - chmod +x .env
 
 artifacts:
   files:
     - appspec.yml
+    - .env
