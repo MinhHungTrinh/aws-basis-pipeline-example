@@ -32,4 +32,5 @@ artifacts:
   files:
     - codedeploy/**/*
     - appspec.yml
+    - docker-compose.yml
     - .env
